@@ -7,6 +7,7 @@ import pandas as pd
 from lxml.html import fromstring
 from itertools import cycle
 import traceback
+import logging
 
 def prediction(title):
         cv = joblib.load('count_vect')
@@ -60,6 +61,8 @@ def predictN():
             return title
         title = showtitle(user_input)
         predict = prediction(title)
+        app.logger.addHandler(logging.StreamHandler(sys.stdout))
+        app.logger.setLevel(logging.ERROR)
         return render_template('result.html', title = title, prediction = predict)
 
 @app.route('/predictT',methods = ['POST'])
