@@ -22,13 +22,25 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+@app.route('/About')
+def About():
+    return render_template('About.html')
+
+@app.route('/Select1')
+def Select1():
+    return render_template('SNumber.html')
+
+@app.route('/Select2')
+def Select2():
+    return render_template('SText.html')
+
 @app.route('/select',methods=['POST'])
 def Select():
     if request.method == 'POST' :
         if request.form['options'] == 'SNumber' :
             print(request.form['options'])
             return render_template('SNumber.html')
-        
+
         elif request.form['options'] == 'SText':
             print(request.form['options'])
             return render_template('SText.html')
