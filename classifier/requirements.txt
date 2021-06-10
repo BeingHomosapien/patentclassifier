@@ -9,7 +9,7 @@ cffi==1.13.2
 chardet==3.0.4
 cycler==0.10.0
 decorator==4.4.1
-Django==2.2.7
+Django==2.2.24
 easygui==0.98.1
 Eel==0.10.4
 future==0.18.2
